@@ -12,9 +12,8 @@ public:
             temp = 1;
         }
         else{
-            if(price < st.top().first){
+            if(price < st.top().first)
                 temp = index - st.top().second;
-            }
             else{
                 while(!st.empty() && st.top().first <= price)
                     st.pop();
