@@ -16,15 +16,12 @@ public:
                 temp = index - st.top().second;
             }
             else{
-                while(!st.empty() && st.top().first <= price){
+                while(!st.empty() && st.top().first <= price)
                     st.pop();
-                }
-                if(st.empty()){
+                if(st.empty())
                     temp = index+1;
-                }
-                else{
+                else
                     temp = index - st.top().second;
-                }
             }
         }
         st.push({price, index});
