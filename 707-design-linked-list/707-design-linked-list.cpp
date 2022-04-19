@@ -54,7 +54,7 @@ public:
         for(int i = 0 ; i < index ; i++) temp = temp->next;
         Node* temp1 = temp->next;
         temp->next = temp1->next;
-        temp1->next = NULL;
+       // temp1->next = NULL;
         size--;
         delete temp1;
     }
