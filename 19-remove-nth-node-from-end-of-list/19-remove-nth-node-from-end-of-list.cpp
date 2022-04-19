@@ -16,7 +16,7 @@ public:
         ListNode *first = dum;
         ListNode *second = dum;
         
-        for(int i = 1; i <= n; i++)
+        for(int i = 0; i < n; i++)
             first = first->next;
         
         while(first->next != NULL){
@@ -26,5 +26,6 @@ public:
         
         second->next = second->next->next;
         return dum->next;
+        
     }
 };
