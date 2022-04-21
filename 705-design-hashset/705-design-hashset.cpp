@@ -1,6 +1,6 @@
 class MyHashSet {
 public:
-	static const int BUCKET_SIZE = 256;
+	static const int BUCKET_SIZE = 100;
 	vector<int> bucket[BUCKET_SIZE];
 
 	void add(int key) { 
