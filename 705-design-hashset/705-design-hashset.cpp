@@ -1,28 +1,25 @@
 class MyHashSet {
 public:
-    vector<bool> ans;
-    MyHashSet() {
-        ans.resize(1e6+1,false);
-    }
+	static const int BUCKET_SIZE = 256;
+	vector<int> bucket[BUCKET_SIZE];
 
+	void add(int key) { 
+		if (!contains(key))
+			bucket[key%BUCKET_SIZE].push_back(key);
+	}
+
+	void remove(int key) {
+		vector<int> &curr_bucket = bucket[key%BUCKET_SIZE];
+		for (vector<int>::iterator it=curr_bucket.begin(); it!=curr_bucket.end(); it++) {
+			if (*it == key) {
+                curr_bucket.erase(it);
+                break;
+            }
+        }
+	}
     
-    void add(int key) {
-        ans[key] = true;
-    }
-    
-    void remove(int key) {
-        ans[key] = false;
-    }
-    
-    bool contains(int key) {
-        return ans[key];
-    }
+	bool contains(int key) {
+        vector<int> &curr_bucket = bucket[key%BUCKET_SIZE];
+        return any_of(curr_bucket.begin(), curr_bucket.end(), [&key](int i){return i == key;});
+	}
 };
-
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * MyHashSet* obj = new MyHashSet();
- * obj->add(key);
- * obj->remove(key);
- * bool param_3 = obj->contains(key);
- */
