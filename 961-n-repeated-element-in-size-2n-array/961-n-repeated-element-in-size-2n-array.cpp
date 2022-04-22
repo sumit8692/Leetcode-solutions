@@ -15,11 +15,12 @@ public:
 //         return res;
         
         int n = nums.size()/2;
-        for(int i = 0 ; i<nums.size(); i++){
-            if(count(nums.begin() , nums.end() , nums[i]) == n){
+        
+        for(int i = 0 ; i<nums.size(); i++)
+            if(count(nums.begin() , nums.end() , nums[i]) == n)
                 return nums[i];
-       }
-    }
+        
         return nums.back();
+            
     }
 };
