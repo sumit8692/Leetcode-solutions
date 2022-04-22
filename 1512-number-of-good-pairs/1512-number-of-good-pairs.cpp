@@ -1,17 +1,19 @@
-class Solution 
-{
+class Solution {
 public:
-    int numIdenticalPairs(vector<int>& nums) 
-    {
-        int good_pairs = 0;
+    int numIdenticalPairs(vector<int>& nums) {
+        unordered_map<int,int>mp;
         
-        unordered_map<int,int> map;   // num => frequency
-        for(auto num : nums)
-            map[num]++;
-        
-        for(auto& [num, freq] : map)
-            good_pairs += (freq*(freq-1)) / 2;
-    
-        return good_pairs;
+         for(int i=0;i<nums.size();i++)
+         {
+             ++mp[nums[i]];
+             
+         }
+        int goodpair=0;
+        for(auto it:mp)
+        {
+            int n=it.second;
+            goodpair+=(n*(n-1))/2;
+        }
+        return goodpair;
     }
 };
