@@ -1,0 +1,30 @@
+class UndergroundSystem {
+public:
+    map<double,pair<string,double>> customer;
+	//customer is storing customer id as key and stationname and time as value
+    map<pair<string, string>, pair<double, double>> total;
+	//total is storing startstation and endstation as key and totaltime and count as value
+    UndergroundSystem() {
+        customer.clear();
+        total.clear();
+    }
+    
+    void checkIn(int id, string stationName, int t) {
+        customer[id]={stationName, t};
+    }
+    
+    void checkOut(int id, string stationName, int t) {
+        total[{customer[id].first, stationName}]={
+													total[{customer[id].first, stationName}].first + (t-customer[id].second) ,
+													total[{customer[id].first, stationName}].second+1 };
+		
+		//total[{customer[id].first, stationName}].first = total time till now,( summation of times for the station)
+		// (t-customer[id].second) = total time for the current customer
+		//total[{customer[id].first, stationName}].second+1 = no. of customers 
+    }
+    
+    double getAverageTime(string startStation, string endStation) {
+        return total[ { startStation,endStation } ].first / total[ { startStation, endStation } ].second;
+		// totaltime /no of customers
+    }
+};
