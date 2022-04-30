@@ -10,17 +10,27 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        ListNode *curr = head;
-        ListNode *prev = NULL;
-        while(curr!=NULL){
-            ListNode *temp = curr->next;
-                      curr->next = prev;
-                      prev = curr;
-                      curr = temp;
-        }
-        return prev;
+        ListNode* reverseList(ListNode* head) {
+    //     ListNode *curr = head;
+    //     ListNode *prev = NULL;
+    //     while(curr!=NULL){
+    //         ListNode *temp = curr->next;
+    //                   curr->next = prev;
+    //                   prev = curr;
+    //                   curr = temp;
+    //     }
+    //     return prev;
         
         //Issey using recursion bhi karna hai.
+    
+         
+         if(head == NULL or head->next == NULL) return head;
+            
+         ListNode* newhead = reverseList(head->next);
+         ListNode* headnext = head->next;
+         headnext->next = head;
+         head->next = NULL;
+         return newhead;
+    
     }
 };
