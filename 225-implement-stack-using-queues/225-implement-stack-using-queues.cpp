@@ -5,7 +5,7 @@ public:
         
     }
     
-    void push(int x) {
+    void push(int x) {  // this is using single queue approach.
         q.push(x);
         for(int i = 0; i < q.size()-1;i++){
             q.push(q.front());
