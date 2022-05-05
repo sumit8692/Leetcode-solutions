@@ -1,40 +1,49 @@
-class Solution {
-public:
-    int maxOperations(vector<int>& nums, int k) {
+// class Solution {
+// public:
+//     int maxOperations(vector<int>& nums, int k) {
         
-//         int n = nums.size();
-//         unordered_map<int, int> freqMap;
-//         int ans = 0;
-        
-//         for(int i = 0 ; i < n ; i++){
+//         sort(nums.begin(), nums.end());
+//         int i = 0;
+//         int j = nums.size() - 1;
+//         int count = 0;
+//         while(i<j){
             
-//             if(freqMap[k - nums[i]] > 0){
-//                 ans++;
-//                 freqMap[k-nums[i]]--;
-//             }else{
-//                 freqMap[nums[i]]++;
+//             if(nums[i] + nums[j] == k){
+//                 count++;
+//                 i++;
+//                 j--;
 //             }
             
+//             else if(nums[i] + nums[j] > k)   j--;
+//             else i++;
+            
 //         }
+//         return count;
+//     }
+// };
+
+class Solution {
+public:
+    int maxOperations(vector<int>& nums, int k) 
+    {
+        unordered_map<int, int> mp;
+        int count=0;
         
-//         return ans;
-        
-        sort(nums.begin(), nums.end());
-        int i = 0;
-        int j = nums.size() - 1;
-        int count = 0;
-        while(i<j){
-            
-            if(nums[i] + nums[j] == k){
+        for(auto it:nums)
+        {
+		
+            int y=k-it;
+            if(mp.find(y) != mp.end() && mp[y] > 0) //find k-it in map if it exists we increase the count
+            {
                 count++;
-                i++;
-                j--;
+				//decrease the frequency of y and it
+                mp[y]--; 
+                mp[it]--;
             }
-            
-            else if(nums[i] + nums[j] > k)   j--;
-            else i++;
+            mp[it]++; //store the frequency of it
             
         }
+        
         return count;
     }
 };
