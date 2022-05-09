@@ -17,14 +17,13 @@ public:
         while(temp->next != NULL){
             
             if(temp->val == temp->next->val){
-                ListNode *del = temp->next;
-                temp->next = del->next;
-                delete del;
+                ListNode *del_node = temp->next;
+                temp->next = del_node->next;
+                delete del_node;
             }
+            
             else    temp = temp->next;   
         }
-        
         return head;
-        
     }
 };
