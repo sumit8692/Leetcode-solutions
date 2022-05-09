@@ -16,7 +16,7 @@ class Solution {
         vector<vector<int>> ans;
         queue<TreeNode*> q;
         q.push(root);
-        while(q.empty() == false){
+        while(q.empty() != true){
             int size = q.size();
             vector<int> arr;
             for(int i = 0; i < size; i++){
