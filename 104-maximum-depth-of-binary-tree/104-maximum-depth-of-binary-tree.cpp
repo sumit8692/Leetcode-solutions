@@ -16,12 +16,8 @@ public:
         if(root == NULL)
             return 0;
         
-        int lh = 0, rh = 0;
-        lh = maxDepth(root->left);
-        rh = maxDepth(root->right);
-        
-        return 1 + max(rh, lh);
+        return (1 + max(maxDepth(root->left), maxDepth(root->right)));
         
         
-    }
+    }// There's a difference between depth and height of a binary tree. For height, null case we return -1 and for depth we return 0;
 };
