@@ -18,6 +18,6 @@ public:
             if(b==NULL) b = headA;
             else b = b->next;
         }
-        return b;
+        return a;
     }
 };
