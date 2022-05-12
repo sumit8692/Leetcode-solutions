@@ -7,14 +7,11 @@ public:
         int start = 0;
         for(int i = 0; i < nums.size(); i++){
             sum += nums[i];
-            if(sum >= target){
                 while(sum>=target){
                     length = min(i-start+1,length);
                     sum  -= nums[start++];
                 }
-            }
         }
         return length == INT_MAX?0:length;
-        
     }
 };
