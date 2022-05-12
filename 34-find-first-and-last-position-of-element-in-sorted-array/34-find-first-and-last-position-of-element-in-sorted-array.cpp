@@ -16,13 +16,12 @@ public:
             
             else start = mid + 1;
         }
+        
         result.push_back(ans);
-        // while(ans < nums.size() && nums[ans]==target){
-        //     ans++;
-        // }
         start = 0;
         end = nums.size() - 1;
         ans = -1;
+        
         while(start<=end){
             int mid = start + (end - start)/2;
             if(nums[mid] == target){
@@ -34,12 +33,9 @@ public:
             
             else start = mid + 1;
         }
+        
         result.push_back(ans);
-        // if(result[0] == -1){
-        //     result.push_back(-1);
-        // }else{
-        //     result.push_back(ans-1);
-        // }
+
         return result;
     }
 };
