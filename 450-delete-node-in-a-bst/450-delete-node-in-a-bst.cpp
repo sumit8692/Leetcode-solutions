@@ -13,11 +13,11 @@ class Solution {
 public:
 	int max(TreeNode *root){
 		TreeNode *curr=root;
-		while(curr->left!=NULL){
+		while(curr->left)
 			curr=curr->left;
-		}
 		return curr->val;
 	}
+    
 	TreeNode* deleteNode(TreeNode* root, int key) {
 		   if(!root) return root;
 		   if(root->val==key){
