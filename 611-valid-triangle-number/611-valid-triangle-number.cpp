@@ -6,7 +6,7 @@ public:
         
         sort(nums.begin(),nums.end());
         
-        for(int i = n-1;i >=0; i--){
+        for(int i = n-1;i >=2; i--){
             int j=0, k=i-1;
             while(j<k)
             {
