@@ -13,7 +13,7 @@ class Solution {
 public:
 	int max(TreeNode *root){
 		TreeNode *curr=root;
-		while(curr->left){
+		while(curr->left!=NULL){
 			curr=curr->left;
 		}
 		return curr->val;
