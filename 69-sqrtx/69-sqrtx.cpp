@@ -1,8 +1,8 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        long lo = 1;
-        long hi = INT_MAX;
+        int lo = 1;
+        int hi = INT_MAX;
         int ans = 0;
         while(lo<=hi){
             long long mid = hi + (lo - hi)/2;
