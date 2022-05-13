@@ -14,6 +14,6 @@ public:
             else hi = mid - 1;
             
         }
-        return (int)ans;
+        return ans;
     }
 };
