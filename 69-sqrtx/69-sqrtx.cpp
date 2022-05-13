@@ -5,7 +5,8 @@ public:
         int hi = INT_MAX;
         int ans = 0;
         while(lo<=hi){
-            long long mid = hi + (lo - hi)/2;
+            
+            double mid = hi + (lo - hi)/2;
             if(mid*mid <= x) {
                 ans = mid;
                 lo = mid + 1;
