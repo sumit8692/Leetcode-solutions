@@ -15,9 +15,9 @@ public:
     int res = 0;
     
     int height(TreeNode* root){
-        if(!root){
+        if(!root)
             return 0;
-        }
+        
         
         int lh = height(root->left);
         int rh = height(root->right);
