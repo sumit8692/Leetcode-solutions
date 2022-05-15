@@ -22,11 +22,10 @@ public:
     }
     
     int calctime(vector<int> &piles,int mid){
+        
         int sum = 0;
-        
         for(int i = 0; i < piles.size(); i++)    sum = sum + (piles[i]/mid) + ((piles[i]%mid)!=0);
-        
         return sum;
-
+        
     }
 };
