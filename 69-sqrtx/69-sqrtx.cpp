@@ -2,7 +2,8 @@ class Solution {
 public:
     int mySqrt(int x) {
         int lo = 1;
-        int hi = x;
+        int hi = x/2;
+        if(x==1)    return 1;
         int ans = 0;
         while(lo<=hi){
             
