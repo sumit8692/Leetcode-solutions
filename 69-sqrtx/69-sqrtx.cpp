@@ -2,7 +2,7 @@ class Solution {
 public:
     int mySqrt(int x) {
         int lo = 1;
-        int hi = INT_MAX;
+        int hi = x;
         int ans = 0;
         while(lo<=hi){
             
