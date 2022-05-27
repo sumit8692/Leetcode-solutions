@@ -8,7 +8,7 @@ public:
         int t1 = 1;
         int t2 = 1;
         
-        int sum = t0 + t1 + t2;
+        int sum = 0;
         for(int i = 3; i <= n; i++){
             sum = t0 + t1 + t2;
             t0 = t1;
