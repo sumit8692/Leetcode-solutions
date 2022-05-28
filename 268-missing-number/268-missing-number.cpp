@@ -14,13 +14,18 @@ public:
 //         return ans;
         // O(n*Log(n))  
         
-        int sum =  size*(size+1)/2;
+        // int sum =  size*(size+1)/2;
         
-        for(int i = 0; i < size; i++)
-            sum -= nums[i];
-        return sum;
-
-            
-        
+        // for(int i = 0; i < size; i++)
+        //     sum -= nums[i];
+        // return sum;
+        int ans = size;
+        int mask = 0;
+        for(int i = 0; i < size; i++){
+            mask ^= i;
+            ans ^= nums[i];
+        }
+        ans = mask^ans;
+        return ans;
     }
 };
