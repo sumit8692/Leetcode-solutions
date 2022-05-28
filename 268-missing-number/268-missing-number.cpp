@@ -2,35 +2,25 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         
-        int size = nums.size();
-        sort(nums.begin(), nums.end());
-        int ans = size;
+         int size = nums.size();
+//         sort(nums.begin(), nums.end());
+//         int ans = size;
         
-        for(int i = 0; i < size; i++){
-            if(nums[i]!=i){  ans = i;
-            break;}
-        }
+//         for(int i = 0; i < size; i++){
+//             if(nums[i]!=i){  ans = i;
+//             break;}
+//         }
         
-        return ans;
+//         return ans;
+        // O(n*Log(n))  
+        
+        int sum =  size*(size+1)/2;
+        
+        for(int i = 0; i < size; i++)
+            sum -= nums[i];
+        return sum;
+
+            
         
     }
 };
-	int missingNumber(vector<int>& nums) {
-        
-        int n = nums.size();
-        sort(nums.begin(), nums.end());
-        
-        int ans = n;
-        
-        for(int i = 0 ; i < n ; i++){
-            
-            if(nums[i] != i){
-                ans = i;
-                break;
-            }
-            
-        }
-        
-        return ans;
-        
-    }
