@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    //This is wrong as we are visiting each node and counting it.
     int count = 0;
     int countNodes(TreeNode* root) {
         
@@ -23,4 +24,6 @@ public:
         return count;
         
     }
+        
+        
 };
