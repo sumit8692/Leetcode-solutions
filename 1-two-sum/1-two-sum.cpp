@@ -15,11 +15,16 @@ public:
         unordered_map<int, int> mpp;
         vector<int> ans;
         for(int i = 0; i < nums.size(); i++){
+            
             if(mpp.find(k-nums[i]) != mpp.end()){
+                
                 ans.push_back(mpp[k-nums[i]]);
                 ans.push_back(i);
+                
             }
+            
             mpp[nums[i]] = i;
+            
         }
         
         return ans;
