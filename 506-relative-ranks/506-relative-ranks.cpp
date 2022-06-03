@@ -1,14 +1,14 @@
 class Solution {
 public:
     vector<string> findRelativeRanks(vector<int>& score) {
-        priority_queue<pair<int,int>>  pq;
-        vector<string> result(score.size(),"");
-
+        priority_queue<pair<int,int>>   pq;
+        vector<string> result(score.size(), "");
+        
         for(int i=0; i<score.size() ; i++)
             pq.push({score[i],i});
 
-        for(int i=0; i<score.size() ; i++){
-
+        
+        for(int i = 0; i < score.size(); i++){
             if(i==0){
                 result[pq.top().second]="Gold Medal";
                 pq.pop();
@@ -23,9 +23,9 @@ public:
                 pq.pop();
             }
         }
-
+        
         return result;
-    
+            
     }
 };
 
