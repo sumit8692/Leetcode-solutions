@@ -5,7 +5,7 @@ public:
         vector<int> result;
         
         int count1=0, count2=0;
-        int result1=INT_MAX, result2=INT_MAX;
+        int result1=INT_MIN, result2=INT_MIN;
         
         for(int num:nums){
             if(num==result1) count1++;
