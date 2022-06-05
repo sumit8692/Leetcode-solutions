@@ -12,7 +12,7 @@ public:
         {
             rsum = rsum-nums[i];
 
-            if(lsum==rsum)
+            if(!(lsum-rsum))
                 return i;
             
             lsum +=nums[i]; 
