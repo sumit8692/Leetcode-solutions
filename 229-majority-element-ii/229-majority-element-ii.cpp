@@ -21,8 +21,6 @@ public:
             else if(num==result2)  count2++;
         }
         
-        cout<<result1<<":"<<count1<<endl;
-        cout<<result2<<":"<<count2<<endl;
         
         if(count1>n/3) result.push_back(result1);
         if(count2>n/3) result.push_back(result2);
