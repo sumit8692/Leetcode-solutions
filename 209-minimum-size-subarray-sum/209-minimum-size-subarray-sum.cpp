@@ -11,7 +11,8 @@ public:
                     length = min(i-start+1,length);
                     sum  -= nums[start++];
                 }      
-            
+            //length = min(i-start+2,length);
+
         }
         
         return length == INT_MAX?0:length;
