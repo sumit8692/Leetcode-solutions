@@ -4,7 +4,7 @@ public:
         int len = 0;
         int tail = s.length() - 1;
         
-        while(s[tail] == ' ') tail--;
+        while(s[tail] == ' ')   tail--; 
             
         while (tail >= 0 && s[tail] != ' ') {
             len++;
