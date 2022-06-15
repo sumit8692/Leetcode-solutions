@@ -27,5 +27,5 @@ public:
         }
         ans = mask^ans;
         return ans;
-    }
+    }//most efficient
 };
