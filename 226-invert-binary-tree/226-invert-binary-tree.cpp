@@ -14,7 +14,8 @@ public:
     void helper(TreeNode* root){
         
         if(!root)
-            return ;
+            return;
+        
         helper(root->left);
         helper(root->right);
         
