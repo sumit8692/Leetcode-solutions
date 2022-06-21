@@ -1,16 +1,23 @@
 class Solution {
 public:
     int maximumWealth(vector<vector<int>>& accounts) {
-        vector<int> sum(accounts.size(),0);
-        for(int i = 0; i < accounts.size(); i++)
-            for(int j = 0; j < accounts[0].size(); j++)
-                sum[i] += accounts[i][j];
+        // Initialize the maximum wealth seen so far to 0 (the minimum wealth possible)
+        int maxWealthSoFar = 0;
         
-        int maxi = sum[0];
+        // Iterate over accounts
+        for (vector<int>& account : accounts) {
+            // For each account, initialize the sum to 0
+            int currCustomerWealth = 0;
+            // Add the money in each bank
+            for (int money : account) {
+                currCustomerWealth += money;
+            }
+            // Update the maximum wealth seen so far if the current wealth is greater
+            // If it is less than the current sum
+            maxWealthSoFar = max(maxWealthSoFar, currCustomerWealth);
+        }
         
-        for(int i = 0; i < sum.size();i++)  maxi = max(maxi, sum[i]);
-        
-        return maxi;
-        
+        // Return the maximum wealth
+        return maxWealthSoFar;
     }
 };
