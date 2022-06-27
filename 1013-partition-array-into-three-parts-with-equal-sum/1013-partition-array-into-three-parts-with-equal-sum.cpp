@@ -16,7 +16,7 @@ public:
             if(temp == each)    found++, temp = 0;
         }
         
-        return found >= 3?1:0;
+        return found >= 3?true : false;
 
     }
 };
