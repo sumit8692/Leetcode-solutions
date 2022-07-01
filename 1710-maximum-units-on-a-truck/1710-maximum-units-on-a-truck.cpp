@@ -7,10 +7,12 @@ public:
         
         int ans = 0;
         
-        for(auto &b: boxTypes){ 
+        for(auto &b: boxTypes){
+            
             int count = min(b[0], truckSize);
             ans += count*b[1], truckSize -= count;
             if(!truckSize)  return ans;
+            
         }
         
         return ans;
