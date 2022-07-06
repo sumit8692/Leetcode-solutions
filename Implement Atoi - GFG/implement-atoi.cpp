@@ -12,16 +12,15 @@ class Solution{
     /*You are required to complete this method */
     int atoi(string str) {
         //Your code here
-        int flag = 0;\
-        int i = 0;
+        int flag = 0, i = 0;
         if(str[0] == '-')   flag = 1, i = 1;
         int ans = 0;
         for(; i < str.size(); i++){
             if(str[i] >= 48 && str[i] <= 57)
-               ans = ans*10 + (str[i]-48); 
-            else return -1;
+                ans = ans*10 + str[i]-'0';
+            else return - 1;
         }
-        if(flag)    ans = (-1) * ans;
+        if(flag)    ans = (-1)*ans;
         return ans;
     }
 };
