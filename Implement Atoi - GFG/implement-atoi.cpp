@@ -16,7 +16,7 @@ class Solution{
         if(str[0] == '-')   flag = 1, i = 1;
         int ans = 0;
         for(; i < str.size(); i++){
-            if(str[i] >= 48 && str[i] <= 57)
+            if(str[i] >= '0' && str[i] <= '9')
                 ans = ans*10 + str[i]-'0';
             else return - 1;
         }
