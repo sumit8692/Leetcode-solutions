@@ -11,12 +11,12 @@ using namespace std;
 class Solution
 {
 public:
-    vector<vector<int> > ans;
+   vector<vector<int> > ans;
    
    void solve(vector<int> v, vector<int> &arr, int i)
    {
        if(i == arr.size()) 
-          ans.push_back(v);
+          {ans.push_back(v); return;}
        else
        {
           solve(v, arr, i+1);
