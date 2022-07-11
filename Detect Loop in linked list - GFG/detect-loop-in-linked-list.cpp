@@ -49,19 +49,18 @@ class Solution
     bool detectLoop(Node* head)
     {
         // your code here
-        if(head == NULL){
-            return 0;
-        }
+        if(!head)   return false;
         
-        Node *slow = head;
-        Node *fast = head;
+        unordered_map<Node*, bool> mp;
         
-        while(fast != NULL && fast->next != NULL){
-            slow = slow->next;
-            fast = fast->next->next;
-            if(slow == fast)    return 1;
+        while(head){
+            if(mp[head] == true)    return true;
+            else{
+              mp[head] = true;
+              head = head->next;
+            }
         }
-        return 0;
+        return false;
     }
 };
 
