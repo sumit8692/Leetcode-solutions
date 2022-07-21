@@ -1,39 +1,38 @@
 class MinStack {
 public:
-    // Using Two Stacks 
-    // TC --> O(1) but SC --> O(2N) for two stacks 
-    stack<int>mindata;
-    stack<int>alldata;
-    MinStack() {//this is just a constructer
+    stack<int> s1, s2;
+    
+    MinStack() {
+        
+        
     }
     
     void push(int val) {
-        alldata.push(val);
-        if(mindata.size()==0 or mindata.top()>=val)
-        {
-            mindata.push(val);
-        }
+        s1.push(val);
+        if(s2.empty() || s2.top() >=  val)    s2.push(val);
     }
     
-    void pop() {
-        if(mindata.size()==0)return ;
-        else{
-           int rv =  alldata.top();
-            alldata.pop();
-            if(rv==mindata.top())mindata.pop();
-        }
+    void pop(){
+        
+        if(s1.top() == s2.top())   s2.pop();
+        s1.pop();
+        
     }
     
     int top() {
-        if(mindata.size()==0)return -1;
-        else{
-           return alldata.top();
-        }
-        
+        return s1.top();
     }
     
     int getMin() {
-        
-            return mindata.top();
+        return s2.top();
     }
 };
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack* obj = new MinStack();
+ * obj->push(val);
+ * obj->pop();
+ * int param_3 = obj->top();
+ * int param_4 = obj->getMin();
+ */
