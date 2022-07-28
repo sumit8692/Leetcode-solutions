@@ -9,7 +9,6 @@ public:
             prefix = (prefix + a % k + k) % k;
             res += count[prefix]++;
         }
-        
         return res;
         
     }
