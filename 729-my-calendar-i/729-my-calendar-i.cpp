@@ -1,22 +1,15 @@
 class MyCalendar {
 public:
-    map<int, int> mp;
+    set<pair<int,int>> bookings;
     MyCalendar() {
         
     }
     
-    bool book(int start, int end) {
-        mp[start]++;
-        mp[end]--;
-        int sum = 0;
-        for(auto it = mp.begin(); it != mp.end(); it++){
-            sum += it->second;
-            if(sum > 1){
-                mp[start]--;
-                mp[end]++;
-                return false;
-            }
-        }
+    bool book(int s1, int e1) {
+        auto slot = bookings.lower_bound({s1, e1});
+        if(slot != end(bookings) &&  !(slot -> first >= e1) || slot != begin(bookings) && !(prev(slot) -> second <= s1))
+            return false;
+        bookings.insert({s1,e1});
         return true;
     }
 };
