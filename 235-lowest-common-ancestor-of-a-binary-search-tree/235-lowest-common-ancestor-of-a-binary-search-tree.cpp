@@ -14,6 +14,7 @@ public:
         
         int small = min(p->val, q->val);
         int large = max(p->val, q->val);
+        
         while(root != NULL){
             if(root->val > large)   root = root->left;
             else if(root->val < small)  root = root->right;
