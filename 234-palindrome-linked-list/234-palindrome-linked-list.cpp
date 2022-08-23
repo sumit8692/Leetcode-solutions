@@ -17,12 +17,15 @@ public:
         while(fast && fast->next)//To find middle of linked list
             slow = slow->next, fast = fast->next->next;
         prev = slow, slow = slow->next, prev->next = NULL;
+        
         while (slow)//reverse linked list
             temp = slow->next, slow->next = prev, prev = slow, slow = temp;
         fast = head, slow = prev;
+        
         while (slow)//check for palindrome
             if (fast->val != slow->val) return false;
             else fast = fast->next, slow = slow->next;
+        
         return true;
     }
 };
